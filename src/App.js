@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 //import the component
 import TodoList from './components/TodoList';
-import TodoForm from './components/TodoList';
+import TodoForm from './components/TodoForm';
 
 function App() {
+  const [state, setState] = useState('');
+  const [todos, setTodos] = useState([])
   return (
     <div className="App">
-      <TodoForm />
+      <header>
+        <h1>Todo List</h1>
+      </header>
+      <TodoForm 
+      state={state} 
+      setState={setState}
+      todos={todos}
+      setTodos={setTodos} />
       <TodoList />
     </div>
   );
