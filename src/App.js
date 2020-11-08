@@ -1,10 +1,15 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+//import the component
+import TodoList from './components/TodoList';
+import TodoForm from './components/TodoList';
 
 function App() {
   return (
     <div className="App">
-      <p>Todo List App</p>
+      <TodoForm />
+      <TodoList />
     </div>
   );
 }
