@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const TodoForm = ({setState, state, todos, setTodos}) => {
     const handleChange = (e) => {
@@ -10,7 +11,7 @@ const TodoForm = ({setState, state, todos, setTodos}) => {
         setTodos([
             ...todos, 
             {
-                uuid: (Math.random),
+                id: uuidv4(),
                 text: state, 
                 completed: false
             }
@@ -20,16 +21,18 @@ const TodoForm = ({setState, state, todos, setTodos}) => {
 
     return(
         <form>
-            <input 
+            <input
+            value={state} 
             type="text" 
             className="todo-input"
             onChange={handleChange}
             />
-            <button className="todo-button" 
-                type="submit"
-                onClick={handleSubmit}
-                >
-                <i className="fas fa-plus-square"></i>
+            <button 
+            className="todo-button" 
+            type="submit"
+            onClick={handleSubmit}
+            >
+            <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
                 <select name="todos" className="filter-todo">

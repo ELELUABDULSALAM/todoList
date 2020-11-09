@@ -17,8 +17,12 @@ function App() {
       state={state} 
       setState={setState}
       todos={todos}
-      setTodos={setTodos} />
-      <TodoList />
+      setTodos={setTodos} 
+      />
+      <TodoList 
+      todos={todos}
+      setTodos={setTodos}
+      />
     </div>
   );
 }
